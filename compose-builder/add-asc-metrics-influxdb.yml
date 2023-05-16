@@ -1,5 +1,5 @@
 # /*******************************************************************************
-#  * Copyright 2022 Intel Corporation.
+#  * Copyright 2022-2023 Intel Corporation.
 #  *
 #  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
 #  * in compliance with the License. You may obtain a copy of the License at
@@ -17,9 +17,9 @@ version: '3.7'
 
 services:
   app-metrics-influxdb:
-    image: ${APP_SVC_REPOSITORY}/app-service-configurable${ARCH}:${APP_SERVICE_CONFIG_VERSION}
+    image: ${APP_SERVICE_CONFIG_REPOSITORY:-${APP_SVC_REPOSITORY}}/app-service-configurable${ARCH}:${APP_SVC_VERSION:-${APP_SERVICE_CONFIG_VERSION}}
     ports:
-      - 127.0.0.1:59707:59707/tcp
+      - "127.0.0.1:59707:59707/tcp"
     container_name: edgex-app-metrics-influxdb
     hostname: edgex-app-metrics-influxdb
     env_file:

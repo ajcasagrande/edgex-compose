@@ -1,5 +1,5 @@
 # /*******************************************************************************
-#  * Copyright 2022 Intel Corporation.
+#  * Copyright 2022-2023 Intel Corporation.
 #  *
 #  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
 #  * in compliance with the License. You may obtain a copy of the License at
@@ -20,9 +20,9 @@ volumes:
 
 services:
   app-rfid-llrp-inventory:
-    image: ${APP_SVC_REPOSITORY}/app-rfid-llrp-inventory${ARCH}:${APP_LLRP_VERSION}
+    image: ${APP_LLRP_REPOSITORY:-${APP_SVC_REPOSITORY}}/app-rfid-llrp-inventory${ARCH}:${APP_SVC_VERSION:-${APP_LLRP_VERSION}}
     ports:
-      - 127.0.0.1:59711:59711/tcp
+      - "127.0.0.1:59711:59711/tcp"
     container_name: edgex-app-rfid-llrp-inventory
     hostname: edgex-app-rfid-llrp-inventory
     env_file:

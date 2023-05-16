@@ -98,7 +98,7 @@ This folder contains the following compose files:
     A template for a single service **extending** compose file from its base service for security mode,
     and the service is enabled with secret store by default.
 - **add-modbus-simulator.yml**<br/>
-    ModBus Simulator **extending** compose file. Adds the MQTT ModBus Simulator service. Must be used in conjunction with  **add-device-modbus.yml**
+    ModBus Simulator **extending** compose file. Adds the MQTT ModBus Simulator service. **Must be used in conjunction with add-device-modbus.yml** 
 - **add-mqtt-broker.yml**<br/>
     MQTT Broker **extending** compose file. Adds the Eclipse Mosquitto MQTT Broker.
 - **add-secure-mqtt-broker.yml**<br/>
@@ -115,6 +115,8 @@ This folder contains the following compose files:
     TAF App Services **extending** `add-taf-app-services` compose file, and services are enabled with secret store by default.
 - **add-taf-device-services-mods.yml**<br/>
     TAF Device Services **extending** compose file. Modifies setting of Device Virtual and Device Modbus for the TAF testing compose files. **Must be used in conjunction with add-device-modbus.yml and add-device-virtual.yml**
+- **add-rtsp-server.yml**<br/>
+    RTSP Server **extending** compose file. Adds a RTSP server based on mediamtx/rtsp-simple-server. Can be used in conjunction with add-device-usb-camera.yml.
 
 ### Environment Files
 

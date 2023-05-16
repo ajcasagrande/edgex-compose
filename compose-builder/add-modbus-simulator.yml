@@ -21,7 +21,7 @@ services:
     container_name: edgex-modbus-simulator
     hostname: edgex-modbus-simulator
     ports:
-      - 127.0.0.1:1502:1502/tcp
+      - "127.0.0.1:1502:1502/tcp"
     networks:
       - edgex-network
     read_only: true

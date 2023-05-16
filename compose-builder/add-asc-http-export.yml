@@ -17,9 +17,9 @@ version: '3.7'
 
 services:
   app-http-export:
-    image: ${APP_SVC_REPOSITORY}/app-service-configurable${ARCH}:${APP_SERVICE_CONFIG_VERSION}
+    image: ${APP_SERVICE_CONFIG_REPOSITORY:-${APP_SVC_REPOSITORY}}/app-service-configurable${ARCH}:${APP_SVC_VERSION:-${APP_SERVICE_CONFIG_VERSION}}
     ports:
-      - 127.0.0.1:59704:59704/tcp
+      - "127.0.0.1:59704:59704/tcp"
     container_name: edgex-app-http-export
     hostname: edgex-app-http-export
     env_file:

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2022 Intel Corporation
+# Copyright (c) 2022-2023 Intel Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ version: '3.7'
 
 services:
   device-onvif-camera:
-    image: ${DEVICE_SVC_REPOSITORY}/device-onvif-camera${ARCH}:${DEVICE_ONVIFCAM_VERSION}
+    image: ${DEVICE_ONVIFCAM_REPOSITORY:-${DEVICE_SVC_REPOSITORY}}/device-onvif-camera${ARCH}:${DEVICE_SVC_VERSION:-${DEVICE_ONVIFCAM_VERSION}}
     ports:
       - "127.0.0.1:59984:59984"
     container_name: edgex-device-onvif-camera

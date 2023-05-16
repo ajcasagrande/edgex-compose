@@ -1,5 +1,5 @@
 # /*******************************************************************************
-#  * Copyright 2022 Intel Corporation.
+#  * Copyright 2022-2023 Intel Corporation.
 #  *
 #  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
 #  * in compliance with the License. You may obtain a copy of the License at
@@ -17,7 +17,7 @@ version: '3.7'
 
 services:
   device-snmp:
-    image: ${DEVICE_SVC_REPOSITORY}/device-snmp${ARCH}:${DEVICE_SNMP_VERSION}
+    image: ${DEVICE_SNMP_REPOSITORY:-${DEVICE_SVC_REPOSITORY}}/device-snmp${ARCH}:${DEVICE_SVC_VERSION:-${DEVICE_SNMP_VERSION}}
     ports:
       - "127.0.0.1:59993:59993"
     container_name: edgex-device-snmp

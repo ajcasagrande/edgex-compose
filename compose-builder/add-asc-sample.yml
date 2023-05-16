@@ -17,9 +17,9 @@ version: '3.7'
 
 services:
   app-sample:
-    image: ${APP_SVC_REPOSITORY}/app-service-configurable${ARCH}:${APP_SERVICE_CONFIG_VERSION}
+    image: ${APP_SERVICE_CONFIG_REPOSITORY:-${APP_SVC_REPOSITORY}}/app-service-configurable${ARCH}:${APP_SVC_VERSION:-${APP_SERVICE_CONFIG_VERSION}}
     ports:
-      - 127.0.0.1:59700:59700/tcp
+      - "127.0.0.1:59700:59700/tcp"
     container_name: edgex-app-sample
     hostname: edgex-app-sample
     env_file:
